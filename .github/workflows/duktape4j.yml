@@ -24,7 +24,8 @@ jobs:
     - name: Build
       run: |
         cd native
-        build-msvc.bat
+        build-gcc.bat
+      #  build-msvc.bat
       shell: cmd
     - name: Test
       run: |
