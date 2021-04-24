@@ -1,3 +1,13 @@
+This fork is for adding the ability to interrupt infinite JS loops in client
+code for my game, [Robot Recharge](https://github.com/TheLogicMaster/robot-recharge)
+
+To build, good luck. The Maven jar task works, but the produced libraries need to
+be manually inserted into the generated archive. The GH Actions workflow
+should create all of the native libraries. 
+
+To test new builds, first delete `/tmp/duktape4j-1.2.1/*` to remove old extracted
+binaries. 
+
 # duktape4j
 
 [![duktape4j](https://github.com/webfolderio/duktape4j/workflows/duktape4j/badge.svg)](https://github.com/webfolderio/duktape4j/actions) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwebfolderio%2Fduktape4j.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwebfolderio%2Fduktape4j?ref=badge_shield) [![License](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/webfolderio/duktape4j/blob/master/LICENSE)

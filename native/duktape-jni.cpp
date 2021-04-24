@@ -33,6 +33,8 @@
 #include <iomanip>
 #include <sstream>
 
+uint duk_interrupted = 0;
+
 extern "C" {
 
 	static JavaVM *globalVM;
@@ -123,8 +125,14 @@ duk_bool_t android__date_parse_string(duk_context* ctx, const char* str) {
   return false;
 }
 
+JNIEXPORT void JNICALL
+Java_io_webfolder_ducktape4j_Duktape_stop(JNIEnv *env, jclass type) {
+    duk_interrupted = 1;
+}
+
 JNIEXPORT jlong JNICALL
 Java_io_webfolder_ducktape4j_Duktape_createContext(JNIEnv* env, jclass type) {
+  duk_interrupted = 0;
   JavaVM* javaVM;
   env->GetJavaVM(&javaVM);
   try {
@@ -142,6 +150,7 @@ Java_io_webfolder_ducktape4j_Duktape_destroyContext(JNIEnv *env, jclass type, jl
 JNIEXPORT jobject JNICALL
 Java_io_webfolder_ducktape4j_Duktape_evaluate__JLjava_lang_String_2Ljava_lang_String_2(
     JNIEnv* env, jclass type, jlong context, jstring code, jstring fname) {
+    duk_interrupted = 0;
   DuktapeContext* duktape = reinterpret_cast<DuktapeContext*>(context);
   if (duktape == nullptr) {
     queueNullPointerException(env, "Null Duktape context - did you close your Duktape?");

@@ -82,6 +82,10 @@ public final class Duktape implements Closeable {
     this.context = context;
   }
 
+  public void interrupt() {
+    stop();  
+  }
+
   /**
    * Evaluate {@code script} and return a result. {@code fileName} will be used in error
    * reporting. Note that the result must be one of the supported Java types or the call will
@@ -197,6 +201,7 @@ public synchronized <T> T get(final String name, final Class<T> type) {
     }
   }
 
+  private static native void stop();
   private static native long createContext();
   private static native void destroyContext(long context);
   private static native Object evaluate(long context, String sourceCode, String fileName);
