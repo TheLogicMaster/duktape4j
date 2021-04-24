@@ -3,7 +3,7 @@ code for my game, [Robot Recharge](https://github.com/TheLogicMaster/robot-recha
 
 To build, good luck. The Maven jar task works, but the produced libraries need to
 be manually inserted into the generated archive. The GH Actions workflow
-should create all of the native libraries. 
+should create all of the native libraries.
 
 To test new builds, first delete `/tmp/duktape4j-1.2.1/*` to remove old extracted
 binaries. 
