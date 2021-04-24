@@ -26,6 +26,7 @@ patch duktape-android/duktape/src/main/jni/duktape/duk_config.h timezone.patch
 patch duktape-android/duktape/src/main/jni/java/JavaType.cpp javatype.patch
 patch duktape-android/duktape/src/main/jni/DuktapeContext.h DuktapeContext.h.patch
 patch duktape-android/duktape/src/main/jni/DuktapeContext.cpp DuktapeContext.cpp.patch
+patch duktape-android/duktape/src/main/jni/duktape/duk_config.h config.patch
 cd duktape-android/duktape/src/main/jni
 mkdir build
 cd build
