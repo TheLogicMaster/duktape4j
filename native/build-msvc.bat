@@ -31,7 +31,6 @@ copy /Y strptime.c duktape-android\duktape\src\main\jni\strptime.c
 "C:\Program Files\git\usr\bin\patch.exe" duktape-android\duktape\src\main\jni\DuktapeContext.h DuktapeContext.h.patch
 "C:\Program Files\git\usr\bin\patch.exe" duktape-android\duktape\src\main\jni\DuktapeContext.cpp DuktapeContext.cpp.patch
 "C:\Program Files\git\usr\bin\patch.exe" duktape-android\duktape\src\main\jni\duktape\duk_config.h config.patch
-type duktape-android\duktape\src\main\jni\duktape\duk_config.h
 mkdir duktape-android\duktape\src\main\jni\build 2> NUL
 copy /Y duktape.vcxproj.patch duktape-android\duktape\src\main\jni\build\duktape.vcxproj.patch
 cd duktape-android\duktape\src\main\jni\build

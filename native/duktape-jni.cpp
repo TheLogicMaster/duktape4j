@@ -33,7 +33,7 @@
 #include <iomanip>
 #include <sstream>
 
-uint duk_interrupted = 0;
+duk_bool_t duk_interrupted = 0;
 
 extern "C" {
 
